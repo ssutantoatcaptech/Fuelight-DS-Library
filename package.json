@@ -1,0 +1,19 @@
+{
+  "name": "fuelight-ds-library",
+  "version": "1.0.0",
+  "description": "Fuelight Design System — tokens synced from Figma via Token Studio",
+  "scripts": {
+    "prebuild": "node scripts/split-tokens.js",
+    "build": "node sd.config.js",
+    "build:watch": "nodemon --watch tokens -e json --exec \"npm run build\""
+  },
+  "devDependencies": {
+    "@tokens-studio/sd-transforms": "^1.2.0",
+    "style-dictionary": "^4.0.0"
+  },
+  "type": "module",
+  "files": [
+    "build/**",
+    "tokens/**"
+  ]
+}

@@ -1,0 +1,29 @@
+name: Build Design Tokens
+
+on:
+  push:
+    paths:
+      - 'tokens/tokens.json'
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - name: Commit built CSS
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add build/
+          git diff --staged --quiet || git commit -m "chore: rebuild CSS from token changes"
+          git push
