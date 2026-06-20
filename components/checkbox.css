@@ -1,0 +1,80 @@
+/* ─── Checkbox ─── */
+
+.fl-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  cursor: pointer;
+}
+
+.fl-checkbox__input {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--color-border-input);
+  border-radius: var(--radius-xs);
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  transition: background var(--duration-normal) var(--ease-default),
+              border-color var(--duration-normal) var(--ease-default);
+}
+
+.fl-checkbox__input:checked {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.fl-checkbox__input:checked::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 5px;
+  height: 9px;
+  border: solid var(--color-text-inverted);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.fl-checkbox__input:indeterminate {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.fl-checkbox__input:indeterminate::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 7px;
+  width: 8px;
+  height: 2px;
+  background: var(--color-text-inverted);
+}
+
+.fl-checkbox__input:hover:not(:disabled) {
+  border-color: var(--color-primary);
+}
+
+.fl-checkbox__input:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.fl-checkbox__label {
+  font-size: var(--font-size-body);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-body);
+}
+
+.fl-checkbox__description {
+  font-size: var(--font-size-caption);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-body);
+}
+
+/* Label position */
+.fl-checkbox--label-left {
+  flex-direction: row-reverse;
+}

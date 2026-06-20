@@ -1,0 +1,62 @@
+/* ─── Tabs ─── */
+
+.fl-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--color-border-default);
+  gap: 0;
+}
+
+.fl-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-6);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color var(--duration-normal) var(--ease-default),
+              border-color var(--duration-normal) var(--ease-default);
+  white-space: nowrap;
+  text-decoration: none;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.fl-tab:hover {
+  color: var(--color-text-primary);
+}
+
+.fl-tab--active {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+  border-bottom-color: var(--color-text-primary);
+}
+
+.fl-tab__icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.fl-tab__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-subtle);
+  font-size: var(--font-size-micro);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+}
+
+.fl-tab--active .fl-tab__badge {
+  background: var(--color-primary);
+  color: var(--color-text-inverted);
+}

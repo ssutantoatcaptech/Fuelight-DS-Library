@@ -1,0 +1,30 @@
+/* ─── Spinner ─── */
+
+.fl-spinner {
+  display: inline-block;
+  border: 3px solid var(--color-border-default);
+  border-top-color: var(--color-text-primary);
+  border-radius: var(--radius-full);
+  animation: fl-spin 0.7s linear infinite;
+}
+
+.fl-spinner--sm {
+  width: 16px;
+  height: 16px;
+  border-width: 2px;
+}
+
+.fl-spinner--md {
+  width: 24px;
+  height: 24px;
+}
+
+.fl-spinner--lg {
+  width: 40px;
+  height: 40px;
+  border-width: 4px;
+}
+
+@keyframes fl-spin {
+  to { transform: rotate(360deg); }
+}

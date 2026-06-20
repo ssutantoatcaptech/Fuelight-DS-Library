@@ -1,0 +1,110 @@
+/* ─── Tooltip ─── */
+
+.fl-tooltip {
+  position: relative;
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-sm);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-lg);
+  max-width: 260px;
+  z-index: 1000;
+}
+
+.fl-tooltip__title {
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.fl-tooltip__body {
+  font-size: var(--font-size-caption);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-body);
+}
+
+.fl-tooltip__action {
+  margin-top: var(--space-3);
+  font-size: var(--font-size-body-sm);
+  color: var(--color-info);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* Legend items */
+.fl-tooltip__legend {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.fl-tooltip__legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-caption);
+  color: var(--color-text-primary);
+}
+
+.fl-tooltip__legend-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* Arrow */
+.fl-tooltip__arrow {
+  position: absolute;
+  width: 10px;
+  height: 5px;
+}
+
+.fl-tooltip__arrow::after {
+  content: "";
+  position: absolute;
+  border: 5px solid transparent;
+}
+
+.fl-tooltip--arrow-down .fl-tooltip__arrow {
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.fl-tooltip--arrow-down .fl-tooltip__arrow::after {
+  border-top-color: var(--color-bg-elevated);
+}
+
+.fl-tooltip--arrow-up .fl-tooltip__arrow {
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.fl-tooltip--arrow-up .fl-tooltip__arrow::after {
+  border-bottom-color: var(--color-bg-elevated);
+}
+
+.fl-tooltip--arrow-left .fl-tooltip__arrow {
+  left: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.fl-tooltip--arrow-left .fl-tooltip__arrow::after {
+  border-right-color: var(--color-bg-elevated);
+}
+
+.fl-tooltip--arrow-right .fl-tooltip__arrow {
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.fl-tooltip--arrow-right .fl-tooltip__arrow::after {
+  border-left-color: var(--color-bg-elevated);
+}

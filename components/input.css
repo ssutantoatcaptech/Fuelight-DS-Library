@@ -1,0 +1,62 @@
+/* ─── Input / Text Area ─── */
+
+.fl-input {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-caption);
+  color: var(--color-text-strong);
+  border: 1px solid var(--color-border-input);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-card);
+  padding: 9px 11px;
+  width: 100%;
+  transition: border-color var(--duration-normal) var(--ease-default);
+}
+
+.fl-input:hover {
+  border-color: var(--color-border-strong);
+}
+
+.fl-input:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 1px;
+}
+
+.fl-input:disabled {
+  background: var(--color-disabled-bg);
+  border-color: var(--color-disabled-border);
+  color: var(--color-disabled-text);
+  cursor: not-allowed;
+}
+
+.fl-input::placeholder {
+  color: var(--color-text-placeholder);
+}
+
+/* Text Area */
+.fl-textarea {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-caption);
+  color: var(--color-text-strong);
+  border: 1px solid var(--color-border-input);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-card);
+  padding: 9px 10px;
+  width: 100%;
+  resize: vertical;
+  min-height: 76px;
+  transition: border-color var(--duration-normal) var(--ease-default);
+}
+
+.fl-textarea:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 1px;
+}
+
+/* Label */
+.fl-label {
+  font-size: 0.79rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wider);
+}

@@ -1,0 +1,64 @@
+/* ─── Toggle ─── */
+
+.fl-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  cursor: pointer;
+}
+
+.fl-toggle__input {
+  appearance: none;
+  width: 40px;
+  height: 22px;
+  border-radius: var(--radius-full);
+  background: var(--color-border-strong);
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  transition: background var(--duration-normal) var(--ease-default);
+}
+
+.fl-toggle__input::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-full);
+  background: var(--color-text-inverted);
+  transition: transform var(--duration-normal) var(--ease-default);
+}
+
+.fl-toggle__input:checked {
+  background: var(--color-primary);
+}
+
+.fl-toggle__input:checked::after {
+  transform: translateX(18px);
+}
+
+.fl-toggle__input:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+.fl-toggle__input:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.fl-toggle__label {
+  font-size: var(--font-size-body);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-body);
+}
+
+.fl-toggle__description {
+  font-size: var(--font-size-caption);
+  color: var(--color-text-muted);
+}
+
+.fl-toggle--label-left {
+  flex-direction: row-reverse;
+}

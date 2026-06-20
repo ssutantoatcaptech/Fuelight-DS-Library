@@ -1,0 +1,60 @@
+/* ─── Toast ─── */
+
+.fl-toast {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-5);
+  padding: var(--space-5) var(--space-6);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-default);
+  background: var(--color-bg-card);
+  box-shadow: var(--shadow-xl);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
+  color: var(--color-text-component);
+  max-width: 380px;
+}
+
+.fl-toast--success {
+  border-color: var(--color-success-border);
+  border-left: 3px solid var(--color-success);
+}
+
+.fl-toast--danger {
+  border-color: var(--color-danger);
+  border-left: 3px solid var(--color-danger);
+}
+
+.fl-toast--warning {
+  border-color: var(--color-warning);
+  border-left: 3px solid var(--color-warning);
+}
+
+.fl-toast--info {
+  border-color: var(--color-info);
+  border-left: 3px solid var(--color-info);
+}
+
+.fl-toast__content {
+  flex: 1;
+}
+
+.fl-toast__title {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: 2px;
+}
+
+.fl-toast__close {
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--color-border-button);
+  background: var(--color-bg-card);
+  color: var(--color-text-muted);
+  font-size: 11px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

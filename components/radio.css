@@ -1,0 +1,60 @@
+/* ─── Radio ─── */
+
+.fl-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  cursor: pointer;
+}
+
+.fl-radio__input {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--color-border-input);
+  border-radius: var(--radius-full);
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  transition: border-color var(--duration-normal) var(--ease-default);
+}
+
+.fl-radio__input:checked {
+  border-color: var(--color-primary);
+}
+
+.fl-radio__input:checked::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+}
+
+.fl-radio__input:hover:not(:disabled) {
+  border-color: var(--color-primary);
+}
+
+.fl-radio__input:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.fl-radio__label {
+  font-size: var(--font-size-body);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-body);
+}
+
+.fl-radio__description {
+  font-size: var(--font-size-caption);
+  color: var(--color-text-muted);
+}
+
+.fl-radio--label-left {
+  flex-direction: row-reverse;
+}

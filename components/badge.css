@@ -1,0 +1,47 @@
+/* ─── Badge ─── */
+
+.fl-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-micro);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-tight);
+}
+
+.fl-badge--default {
+  background: var(--color-bg-subtle);
+  color: var(--color-text-muted);
+}
+
+.fl-badge--primary {
+  background: var(--color-primary);
+  color: var(--color-text-inverted);
+}
+
+.fl-badge--success {
+  background: var(--color-success);
+  color: var(--color-text-inverted);
+}
+
+.fl-badge--danger {
+  background: var(--color-danger);
+  color: var(--color-text-inverted);
+}
+
+.fl-badge--warning {
+  background: var(--color-warning);
+  color: var(--color-text-inverted);
+}
+
+/* Dot badge (no text) */
+.fl-badge--dot {
+  min-width: 8px;
+  width: 8px;
+  height: 8px;
+  padding: 0;
+}
