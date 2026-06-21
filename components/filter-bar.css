@@ -1,0 +1,77 @@
+/* ─── Filter Bar ─── */
+
+.fl-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2, 8px);
+  padding: var(--spacing-3, 12px) var(--spacing-4, 16px);
+  margin: 0 var(--spacing-8, 32px);
+  background: var(--color-filter-bar-bg, #2a2d32);
+  border: 1px solid var(--color-border-dark, #3a3a3a);
+  border-radius: var(--radius-container, 8px);
+}
+
+/* Filter pill (dropdown trigger) */
+.fl-filter-bar__pill {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1, 4px);
+  padding: var(--spacing-2, 8px) var(--spacing-3, 12px);
+  background: transparent;
+  border: 1px solid var(--color-border-dark, #3a3a3a);
+  border-radius: var(--radius-sm, 4px);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm, 12px);
+  font-weight: var(--font-weight-normal, 400);
+  color: var(--color-text-inverse, white);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.fl-filter-bar__pill:hover {
+  border-color: var(--color-border-hover-dark, #585250);
+}
+
+.fl-filter-bar__pill--active {
+  border-color: var(--color-primary, #40b8c5);
+}
+
+.fl-filter-bar__pill svg {
+  width: 12px;
+  height: 12px;
+  color: var(--color-text-muted-dark, #8a8685);
+}
+
+/* Date range pill (wider) */
+.fl-filter-bar__pill--date {
+  gap: var(--spacing-2, 8px);
+}
+
+.fl-filter-bar__pill--date svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Spacer pushes items to the right */
+.fl-filter-bar__spacer {
+  flex: 1;
+}
+
+/* Apply button inside filter bar */
+.fl-filter-bar__apply {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-2, 8px) var(--spacing-4, 16px);
+  background: transparent;
+  border: 1px solid var(--color-border-dark, #3a3a3a);
+  border-radius: var(--radius-sm, 4px);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm, 12px);
+  font-weight: var(--font-weight-semibold, 600);
+  color: var(--color-text-inverse, white);
+  cursor: pointer;
+}
+
+.fl-filter-bar__apply:hover {
+  background: var(--color-filter-apply-hover, #3a3d42);
+}

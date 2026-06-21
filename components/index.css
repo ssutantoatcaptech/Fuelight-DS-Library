@@ -25,3 +25,12 @@
 @import './legend.css';
 @import './sidebar.css';
 @import './tag.css';
+@import './page-layout.css';
+@import './page-header.css';
+@import './filter-bar.css';
+@import './content-tabs.css';
+@import './kpi.css';
+@import './chart.css';
+@import './snapshot-card.css';
+@import './data-grid.css';
+@import './form-section.css';

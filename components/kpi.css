@@ -1,0 +1,126 @@
+/* ─── KPI ─── */
+
+/* KPI row (horizontal metrics strip) */
+.fl-kpi-row {
+  display: flex;
+  align-items: stretch;
+  gap: var(--spacing-8, 32px);
+}
+
+/* Single KPI metric */
+.fl-kpi {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1, 4px);
+  min-width: 120px;
+}
+
+.fl-kpi__label {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-body, 14px);
+  font-weight: var(--font-weight-semibold, 600);
+  color: var(--color-text-inverse, white);
+  line-height: 1.4;
+}
+
+.fl-kpi__value {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xl, 24px);
+  font-weight: var(--font-weight-bold, 700);
+  color: var(--color-text-inverse, white);
+  line-height: 1.2;
+}
+
+/* Comparison text below value */
+.fl-kpi__comparison {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs, 10px);
+  font-weight: var(--font-weight-normal, 400);
+  color: var(--color-text-muted-dark, #8a8685);
+  line-height: 1.4;
+}
+
+/* Delta indicator (inline with comparison) */
+.fl-kpi__delta {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs, 10px);
+  font-weight: var(--font-weight-semibold, 600);
+}
+
+.fl-kpi__delta--positive {
+  color: var(--color-delta-positive, #19b07a);
+}
+
+.fl-kpi__delta--negative {
+  color: var(--color-delta-negative, #e55c5c);
+}
+
+.fl-kpi__delta--neutral {
+  color: var(--color-text-muted-dark, #8a8685);
+}
+
+/* Investment table (below KPIs) */
+.fl-kpi-table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.fl-kpi-table__header {
+  display: grid;
+  grid-template-columns: 200px repeat(3, 1fr);
+  gap: var(--spacing-4, 16px);
+  padding: var(--spacing-2, 8px) 0;
+  border-bottom: 1px solid var(--color-border-dark, #3a3a3a);
+}
+
+.fl-kpi-table__header-cell {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm, 12px);
+  font-weight: var(--font-weight-semibold, 600);
+  color: var(--color-text-inverse, white);
+  line-height: 1.4;
+}
+
+.fl-kpi-table__header-cell--accent {
+  color: var(--color-primary, #40b8c5);
+}
+
+.fl-kpi-table__row {
+  display: grid;
+  grid-template-columns: 200px repeat(3, 1fr);
+  gap: var(--spacing-4, 16px);
+  padding: var(--spacing-2, 8px) 0;
+  border-bottom: 1px solid var(--color-border-dark-subtle, #2a2d32);
+}
+
+.fl-kpi-table__row:last-child {
+  border-bottom: none;
+}
+
+.fl-kpi-table__cell {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm, 12px);
+  font-weight: var(--font-weight-normal, 400);
+  color: var(--color-text-inverse, white);
+  line-height: 1.4;
+}
+
+.fl-kpi-table__cell--label {
+  padding-left: var(--spacing-4, 16px);
+  color: var(--color-text-muted-dark, #8a8685);
+}
+
+/* Expandable section (collapse chevron) */
+.fl-kpi-table__expand {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: var(--spacing-2, 8px) 0;
+}
+
+.fl-kpi-table__expand svg {
+  width: 16px;
+  height: 16px;
+  color: var(--color-text-muted-dark, #8a8685);
+}

@@ -1,0 +1,311 @@
+/* ─── Form Section ─── */
+
+/* Form page wrapper */
+.fl-form-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8, 32px);
+  padding: var(--spacing-8, 32px);
+  max-width: 960px;
+}
+
+/* Section with title on left, fields on right */
+.fl-form-section {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: var(--spacing-8, 32px);
+  align-items: start;
+}
+
+.fl-form-section__title {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xl, 24px);
+  font-weight: var(--font-weight-bold, 700);
+  color: var(--color-text-inverse, white);
+  line-height: 1.3;
+}
+
+.fl-form-section__fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-5, 20px);
+}
+
+/* Form field (label + input) */
+.fl-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1, 4px);
+}
+
+.fl-form-field__label {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm, 12px);
+  font-weight: var(--font-weight-semibold, 600);
+  color: var(--color-text-inverse, white);
+  line-height: 1.4;
+}
+
+.fl-form-field__helper {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs, 10px);
+  color: var(--color-text-muted-dark, #8a8685);
+}
+
+/* Dark input (used in dark page context) */
+.fl-form-field__input {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-3, 12px) var(--spacing-4, 16px);
+  background: var(--color-input-dark-bg, #2a2d32);
+  border: 1px solid var(--color-border-dark, #3a3a3a);
+  border-radius: var(--radius-sm, 4px);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-body, 14px);
+  color: var(--color-text-inverse, white);
+}
+
+.fl-form-field__input:focus {
+  border-color: var(--color-primary, #40b8c5);
+  outline: none;
+}
+
+.fl-form-field__input--select {
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.fl-form-field__input--select svg {
+  width: 16px;
+  height: 16px;
+  color: var(--color-text-muted-dark, #8a8685);
+}
+
+/* Dual calendar layout */
+.fl-form-calendar {
+  display: flex;
+  gap: var(--spacing-6, 24px);
+  align-items: flex-start;
+}
+
+.fl-form-calendar__month {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3, 12px);
+  flex: 1;
+}
+
+.fl-form-calendar__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fl-form-calendar__nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-inverse, white);
+}
+
+.fl-form-calendar__nav-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.fl-form-calendar__month-label {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-body, 14px);
+  font-weight: var(--font-weight-semibold, 600);
+  color: var(--color-text-inverse, white);
+  text-align: center;
+}
+
+/* Calendar grid */
+.fl-form-calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0;
+}
+
+.fl-form-calendar__day-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs, 10px);
+  font-weight: var(--font-weight-semibold, 600);
+  color: var(--color-text-muted-dark, #8a8685);
+}
+
+.fl-form-calendar__day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm, 12px);
+  color: var(--color-text-inverse, white);
+  cursor: pointer;
+  border-radius: 0;
+}
+
+.fl-form-calendar__day:hover {
+  background: var(--color-calendar-hover, #3a3d42);
+}
+
+.fl-form-calendar__day--today {
+  font-weight: var(--font-weight-bold, 700);
+}
+
+.fl-form-calendar__day--selected {
+  background: var(--color-primary, #40b8c5);
+  color: var(--color-text-strong, #1e2024);
+  font-weight: var(--font-weight-semibold, 600);
+}
+
+.fl-form-calendar__day--range {
+  background: var(--color-calendar-range, rgba(64, 184, 197, 0.2));
+}
+
+.fl-form-calendar__day--outside {
+  color: var(--color-text-disabled-dark, #585250);
+}
+
+.fl-form-calendar__day--disabled {
+  color: var(--color-text-disabled-dark, #585250);
+  pointer-events: none;
+}
+
+/* Radio card options (horizontal) */
+.fl-form-options {
+  display: flex;
+  gap: var(--spacing-3, 12px);
+}
+
+.fl-form-option {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2, 8px);
+  flex: 1;
+  padding: var(--spacing-3, 12px) var(--spacing-4, 16px);
+  background: var(--color-input-dark-bg, #2a2d32);
+  border: 1px solid var(--color-border-dark, #3a3a3a);
+  border-radius: var(--radius-sm, 4px);
+  cursor: pointer;
+}
+
+.fl-form-option:hover {
+  border-color: var(--color-border-hover-dark, #585250);
+}
+
+.fl-form-option--selected {
+  border-color: var(--color-primary, #40b8c5);
+}
+
+.fl-form-option__radio {
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  border: 1.5px solid var(--color-text-muted-dark, #8a8685);
+  flex-shrink: 0;
+}
+
+.fl-form-option--selected .fl-form-option__radio {
+  border-color: var(--color-primary, #40b8c5);
+  background: var(--color-primary, #40b8c5);
+  box-shadow: inset 0 0 0 3px var(--color-input-dark-bg, #2a2d32);
+}
+
+.fl-form-option__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.fl-form-option__label {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm, 12px);
+  font-weight: var(--font-weight-semibold, 600);
+  color: var(--color-text-inverse, white);
+}
+
+.fl-form-option__description {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs, 10px);
+  color: var(--color-text-muted-dark, #8a8685);
+}
+
+/* Inline radio group */
+.fl-form-radios {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4, 16px);
+}
+
+.fl-form-radios__item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2, 8px);
+  cursor: pointer;
+}
+
+.fl-form-radios__dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  border: 1.5px solid var(--color-text-muted-dark, #8a8685);
+}
+
+.fl-form-radios__item--selected .fl-form-radios__dot {
+  border-color: var(--color-primary, #40b8c5);
+  background: var(--color-primary, #40b8c5);
+  box-shadow: inset 0 0 0 3px var(--color-page-bg, #1e2024);
+}
+
+.fl-form-radios__label {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm, 12px);
+  color: var(--color-text-inverse, white);
+}
+
+/* Add button (ghost + icon) */
+.fl-form-add {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2, 8px);
+  padding: var(--spacing-2, 8px) var(--spacing-3, 12px);
+  background: transparent;
+  border: 1px solid var(--color-border-dark, #3a3a3a);
+  border-radius: var(--radius-sm, 4px);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm, 12px);
+  color: var(--color-text-inverse, white);
+  cursor: pointer;
+  width: fit-content;
+}
+
+.fl-form-add:hover {
+  border-color: var(--color-border-hover-dark, #585250);
+}
+
+.fl-form-add svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Form footer (cancel + submit) */
+.fl-form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--spacing-3, 12px);
+  padding-top: var(--spacing-6, 24px);
+  border-top: 1px solid var(--color-border-dark, #3a3a3a);
+}

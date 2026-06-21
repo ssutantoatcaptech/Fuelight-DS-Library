@@ -1,0 +1,288 @@
+/* ─── Chart ─── */
+
+/* Chart container */
+.fl-chart {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4, 16px);
+  width: 100%;
+  min-height: 360px;
+  position: relative;
+}
+
+/* Chart toolbar (settings button, info labels) */
+.fl-chart__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-4, 16px);
+}
+
+.fl-chart__toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3, 12px);
+}
+
+.fl-chart__toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3, 12px);
+}
+
+/* Info labels in toolbar */
+.fl-chart__info {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs, 10px);
+  color: var(--color-text-muted-dark, #8a8685);
+  white-space: nowrap;
+}
+
+.fl-chart__info svg {
+  width: 12px;
+  height: 12px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+/* Settings button */
+.fl-chart__settings {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2, 8px);
+  padding: var(--spacing-2, 8px) var(--spacing-3, 12px);
+  border: 1px solid var(--color-border-dark, #3a3a3a);
+  border-radius: var(--radius-sm, 4px);
+  background: transparent;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm, 12px);
+  color: var(--color-text-inverse, white);
+  cursor: pointer;
+}
+
+.fl-chart__settings:hover {
+  border-color: var(--color-border-hover-dark, #585250);
+}
+
+.fl-chart__settings svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Chart canvas area */
+.fl-chart__canvas {
+  position: relative;
+  flex: 1;
+  min-height: 280px;
+  border-left: 1px solid var(--color-border-dark, #3a3a3a);
+  border-bottom: 1px solid var(--color-border-dark, #3a3a3a);
+}
+
+/* Axis labels */
+.fl-chart__axis-y {
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs, 10px);
+  color: var(--color-text-muted-dark, #8a8685);
+  white-space: nowrap;
+}
+
+.fl-chart__axis-x {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--spacing-2, 8px);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs, 10px);
+  color: var(--color-text-muted-dark, #8a8685);
+}
+
+/* Grid lines */
+.fl-chart__grid-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--color-border-dark-subtle, #2a2d32);
+}
+
+/* Tick labels (Y-axis) */
+.fl-chart__tick {
+  position: absolute;
+  left: -36px;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs, 10px);
+  color: var(--color-text-muted-dark, #8a8685);
+  transform: translateY(-50%);
+}
+
+/* Tick labels (X-axis) */
+.fl-chart__tick-x {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs, 10px);
+  color: var(--color-text-muted-dark, #8a8685);
+  text-align: center;
+}
+
+/* Legend */
+.fl-chart__legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-4, 16px);
+  padding: var(--spacing-2, 8px) 0;
+}
+
+.fl-chart__legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1, 4px);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs, 10px);
+  color: var(--color-text-muted-dark, #8a8685);
+}
+
+.fl-chart__legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+
+.fl-chart__legend-line {
+  width: 16px;
+  height: 2px;
+  flex-shrink: 0;
+}
+
+.fl-chart__legend-line--dashed {
+  border-top: 2px dashed;
+}
+
+.fl-chart__legend-line--dotted {
+  border-top: 2px dotted;
+}
+
+/* Tooltip */
+.fl-chart__tooltip {
+  position: absolute;
+  padding: var(--spacing-2, 8px) var(--spacing-3, 12px);
+  background: var(--color-tooltip-bg-dark, white);
+  border-radius: var(--radius-sm, 4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs, 10px);
+  color: var(--color-text-strong, #443f3f);
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.fl-chart__tooltip-title {
+  font-weight: var(--font-weight-semibold, 600);
+  margin-bottom: 4px;
+}
+
+.fl-chart__tooltip-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1, 4px);
+}
+
+/* Waterfall chart columns */
+.fl-chart__waterfall-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.fl-chart__waterfall-label {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs, 10px);
+  font-weight: var(--font-weight-semibold, 600);
+}
+
+.fl-chart__waterfall-label--positive {
+  color: var(--color-chart-positive, #19b07a);
+}
+
+.fl-chart__waterfall-label--negative {
+  color: var(--color-chart-negative, #e55c5c);
+}
+
+/* Bar chart bars */
+.fl-chart__bar {
+  border-radius: 2px 2px 0 0;
+}
+
+.fl-chart__bar--primary {
+  background: var(--color-chart-bar-primary, #40b8c5);
+}
+
+.fl-chart__bar--secondary {
+  background: var(--color-chart-bar-secondary, #9e8c5e);
+}
+
+.fl-chart__bar--positive {
+  background: var(--color-chart-positive, #19b07a);
+}
+
+.fl-chart__bar--negative {
+  background: var(--color-chart-negative, #e55c5c);
+}
+
+.fl-chart__bar--neutral {
+  background: var(--color-chart-neutral, #4a4a4a);
+}
+
+/* Bubble chart */
+.fl-chart__bubble {
+  border-radius: 9999px;
+  position: absolute;
+}
+
+/* Line chart */
+.fl-chart__line {
+  fill: none;
+  stroke-width: 2;
+}
+
+.fl-chart__point {
+  border-radius: 9999px;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  transform: translate(-50%, -50%);
+}
+
+/* Chart section dividers (vertical) */
+.fl-chart__section-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--color-border-dark, #3a3a3a);
+}
+
+/* Section heading above chart area */
+.fl-chart__section-title {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-body, 14px);
+  font-weight: var(--font-weight-bold, 700);
+  color: var(--color-text-inverse, white);
+  text-align: center;
+}
+
+/* Dual Y-axis (right label) */
+.fl-chart__axis-y-right {
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs, 10px);
+  color: var(--color-text-muted-dark, #8a8685);
+  white-space: nowrap;
+}

@@ -1,0 +1,209 @@
+/* ─── Data Grid ─── */
+
+/* Container */
+.fl-data-grid {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid var(--color-border-dark, #3a3a3a);
+  border-radius: var(--radius-container, 8px);
+  overflow: hidden;
+  background: var(--color-data-grid-bg, #1e2024);
+}
+
+/* Header row (frozen row labels + column headers) */
+.fl-data-grid__header {
+  display: flex;
+  background: var(--color-data-grid-header-bg, #2a2d32);
+  border-bottom: 1px solid var(--color-border-dark, #3a3a3a);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+/* Frozen label cell (top-left corner or row label column) */
+.fl-data-grid__label-cell {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-3, 12px) var(--spacing-4, 16px);
+  min-width: 180px;
+  max-width: 280px;
+  border-right: 1px solid var(--color-border-dark, #3a3a3a);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm, 12px);
+  font-weight: var(--font-weight-normal, 400);
+  color: var(--color-text-inverse, white);
+  position: sticky;
+  left: 0;
+  background: inherit;
+  z-index: 1;
+}
+
+/* Column header cell */
+.fl-data-grid__col-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: var(--spacing-3, 12px) var(--spacing-4, 16px);
+  min-width: 100px;
+  flex: 1;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm, 12px);
+  font-weight: var(--font-weight-bold, 700);
+  color: var(--color-text-inverse, white);
+  border-right: 1px solid var(--color-border-dark-subtle, #2a2d32);
+}
+
+.fl-data-grid__col-header:last-child {
+  border-right: none;
+}
+
+/* Lock icon in column header */
+.fl-data-grid__col-lock {
+  width: 12px;
+  height: 12px;
+  margin-right: var(--spacing-1, 4px);
+  color: var(--color-text-muted-dark, #8a8685);
+}
+
+/* Lightning icon (editable) */
+.fl-data-grid__col-edit {
+  width: 12px;
+  height: 12px;
+  margin-right: var(--spacing-1, 4px);
+  color: var(--color-primary, #40b8c5);
+}
+
+/* Body rows */
+.fl-data-grid__body {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.fl-data-grid__row {
+  display: flex;
+  border-bottom: 1px solid var(--color-border-dark-subtle, #2a2d32);
+}
+
+.fl-data-grid__row:last-child {
+  border-bottom: none;
+}
+
+.fl-data-grid__row:hover {
+  background: var(--color-data-grid-row-hover, #252830);
+}
+
+/* Data cell */
+.fl-data-grid__cell {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: var(--spacing-3, 12px) var(--spacing-4, 16px);
+  min-width: 100px;
+  flex: 1;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm, 12px);
+  font-weight: var(--font-weight-normal, 400);
+  color: var(--color-text-inverse, white);
+  border-right: 1px solid var(--color-border-dark-subtle, #2a2d32);
+}
+
+.fl-data-grid__cell:last-child {
+  border-right: none;
+}
+
+/* Editable cell */
+.fl-data-grid__cell--editable {
+  cursor: text;
+}
+
+.fl-data-grid__cell--editable:focus {
+  outline: 2px solid var(--color-primary, #40b8c5);
+  outline-offset: -2px;
+}
+
+/* Locked cell */
+.fl-data-grid__cell--locked {
+  background: var(--color-data-grid-locked-bg, #22252a);
+  color: var(--color-text-muted-dark, #8a8685);
+}
+
+/* Info row (brand/year labels spanning columns) */
+.fl-data-grid__info-row {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-2, 8px) var(--spacing-4, 16px);
+  background: var(--color-data-grid-header-bg, #2a2d32);
+  border-bottom: 1px solid var(--color-border-dark, #3a3a3a);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm, 12px);
+  font-weight: var(--font-weight-semibold, 600);
+  color: var(--color-text-inverse, white);
+}
+
+/* Breadcrumb above grid */
+.fl-data-grid__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2, 8px);
+  padding: var(--spacing-3, 12px) var(--spacing-4, 16px);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm, 12px);
+  color: var(--color-text-muted-dark, #8a8685);
+}
+
+.fl-data-grid__breadcrumb svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Horizontal scrollbar area */
+.fl-data-grid__scroll {
+  overflow-x: auto;
+}
+
+.fl-data-grid__scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.fl-data-grid__scroll::-webkit-scrollbar-thumb {
+  background: var(--color-border-dark, #3a3a3a);
+  border-radius: 3px;
+}
+
+/* Toolbar row (above grid: metadata, view-only badge, settings button) */
+.fl-data-grid__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-3, 12px) var(--spacing-4, 16px);
+  border-bottom: 1px solid var(--color-border-dark, #3a3a3a);
+}
+
+.fl-data-grid__toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3, 12px);
+}
+
+.fl-data-grid__toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3, 12px);
+}
+
+/* View-only badge */
+.fl-data-grid__badge {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1, 4px);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs, 10px);
+  color: var(--color-text-muted-dark, #8a8685);
+}
+
+.fl-data-grid__badge svg {
+  width: 12px;
+  height: 12px;
+}
