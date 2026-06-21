@@ -1,0 +1,79 @@
+/* ─── Button Group ─── */
+
+.fl-btn-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px;
+  height: 40px;
+  background: var(--color-bg-default, white);
+  border-radius: var(--radius-lg, 10px);
+}
+
+.fl-btn-group--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Individual button within group */
+.fl-btn-group__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 36px;
+  min-width: 80px;
+  padding: 0 12px;
+  border: none;
+  border-radius: var(--radius-md, 8px);
+  background: transparent;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-body, 14px);
+  font-weight: var(--font-weight-normal, 400);
+  line-height: 1;
+  color: var(--color-text-muted, #585250);
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: background var(--duration-normal, 150ms) var(--ease-default, ease),
+              color var(--duration-normal, 150ms) var(--ease-default, ease);
+}
+
+.fl-btn-group__item:hover:not(.fl-btn-group__item--active) {
+  background: var(--color-bg-hover-alt, #f7f8f8);
+}
+
+/* Active/selected state */
+.fl-btn-group__item--active {
+  background: var(--color-bg-pressed, #edeef1);
+  color: var(--color-text-strong, #585250);
+}
+
+/* Accent variant: container */
+.fl-btn-group--accent .fl-btn-group__item {
+  color: var(--color-text-strong, #443f3f);
+}
+
+.fl-btn-group--accent .fl-btn-group__item:not(.fl-btn-group__item--active) {
+  background: var(--color-bg-default, white);
+}
+
+.fl-btn-group--accent .fl-btn-group__item--active {
+  background: var(--color-bg-pressed, #edeef1);
+  border: 1.5px solid var(--color-danger, #f40008);
+}
+
+/* Leading icon slot */
+.fl-btn-group__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.fl-btn-group__icon svg {
+  width: 16.5px;
+  height: 16.5px;
+}
