@@ -1,0 +1,274 @@
+/* ─── File Upload ─── */
+
+/* Upload Area (drag & drop zone) */
+.fl-upload-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 400px;
+  height: 172px;
+  padding: 32px 16px;
+  background: var(--color-input-bg, #f7f8f8);
+  border: 1px dashed var(--color-border-input, #c7c4c1);
+  border-radius: var(--radius-md, 8px);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.fl-upload-area--drag {
+  background: var(--color-input-upload-bg, #eff6ff);
+  border: 1px solid var(--color-border-input-hover, #262322);
+  border-style: solid;
+}
+
+.fl-upload-area--disabled {
+  background: var(--color-input-disabled-bg, #edeef1);
+  border-color: var(--color-border-disabled, #d8dbdf);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.fl-upload-area--error {
+  background: var(--color-input-error-bg, #f7f8f8);
+  border-color: var(--color-danger, #c10a00);
+}
+
+.fl-upload-area--focus {
+  border: 2px dashed var(--color-primary, #40b8c5);
+}
+
+.fl-upload-area__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.fl-upload-area__icon svg {
+  width: 19.5px;
+  height: 19.5px;
+}
+
+.fl-upload-area__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+}
+
+.fl-upload-area__label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm, 12px);
+  font-weight: var(--font-weight-normal, 400);
+  line-height: 1.4;
+  color: var(--color-text-strong, #443f3f);
+}
+
+.fl-upload-area__browse {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-body, 14px);
+  font-weight: var(--font-weight-normal, 400);
+  color: var(--color-text-strong, #443f3f);
+  text-decoration: underline;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.fl-upload-area__caption {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm, 12px);
+  font-weight: var(--font-weight-normal, 400);
+  line-height: 1.6;
+  color: var(--color-text-caption, #4d4846);
+  text-align: center;
+}
+
+.fl-upload-area__error {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm, 12px);
+  font-weight: var(--font-weight-normal, 400);
+  line-height: 1.6;
+  color: var(--color-danger-text, #f40000);
+  text-align: center;
+}
+
+/* File Upload Item (individual file row) */
+.fl-file-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  width: 400px;
+  padding: 16px;
+  background: var(--color-bg-default, white);
+  border: 1px solid var(--color-border-subtle, #d8dbdf);
+  border-radius: var(--radius-md, 8px);
+  overflow: hidden;
+}
+
+.fl-file-upload--error {
+  border-color: var(--color-danger, #c10a00);
+  gap: 8px;
+}
+
+.fl-file-upload--uploading {
+  gap: 4px;
+  opacity: 0.7;
+}
+
+.fl-file-upload--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Top row: icon + text + close */
+.fl-file-upload__top {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+}
+
+.fl-file-upload__file {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+.fl-file-upload__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.fl-file-upload__icon svg {
+  width: 19.5px;
+  height: 19.5px;
+}
+
+.fl-file-upload__info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.fl-file-upload__name {
+  font-family: var(--font-family-primary);
+  font-size: 12px;
+  font-weight: var(--font-weight-semibold, 600);
+  line-height: 1.6;
+  color: var(--color-text-default, #262322);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fl-file-upload__meta {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs, 10px);
+  font-weight: var(--font-weight-normal, 400);
+  line-height: 1.6;
+  color: var(--color-text-caption, #4d4846);
+}
+
+.fl-file-upload__status--success {
+  color: var(--color-success, #19b07a);
+}
+
+.fl-file-upload__status--error {
+  color: var(--color-danger, #c10a00);
+}
+
+.fl-file-upload__status--uploading {
+  color: var(--color-primary, #40b8c5);
+}
+
+.fl-file-upload__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.fl-file-upload__close svg {
+  width: 13.5px;
+  height: 13.5px;
+}
+
+/* Progress bar */
+.fl-file-upload__progress {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.fl-file-upload__progress-track {
+  flex: 1;
+  height: 4px;
+  background: var(--color-bg-muted, #edeef1);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.fl-file-upload__progress-fill {
+  height: 100%;
+  background: var(--color-primary, #40b8c5);
+  border-radius: 9999px;
+  transition: width var(--duration-normal, 150ms) var(--ease-default, ease);
+}
+
+.fl-file-upload__progress-text {
+  width: 40px;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs, 10px);
+  font-weight: var(--font-weight-normal, 400);
+  line-height: 1.6;
+  color: var(--color-text-caption, #4d4846);
+  text-align: right;
+}
+
+/* Bottom row (error retry) */
+.fl-file-upload__bottom {
+  padding-left: 32px;
+}
+
+.fl-file-upload__retry {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-body, 14px);
+  font-weight: var(--font-weight-normal, 400);
+  color: var(--color-text-strong, #443f3f);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.fl-file-upload__retry:hover {
+  text-decoration: underline;
+}
