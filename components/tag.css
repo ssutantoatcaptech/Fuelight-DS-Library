@@ -1,0 +1,114 @@
+/* ─── Tag ─── */
+
+.fl-tag {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-tag-between, 4px);
+  height: var(--size-tag-md, 24px);
+  min-width: 24px;
+  padding: 0 var(--spacing-tag-horizontal, 8px);
+  border-radius: 9999px;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm, 12px);
+  font-weight: var(--font-weight-normal, 400);
+  line-height: 1.4;
+  color: var(--color-tag-text, #262322);
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+/* Backgrounds */
+.fl-tag--primary {
+  background: var(--color-tag-primary-bg, #edeef1);
+}
+
+.fl-tag--secondary {
+  background: var(--color-tag-secondary-bg, #25272c);
+  color: var(--color-text-inverse, white);
+}
+
+.fl-tag--tertiary {
+  background: var(--color-tag-tertiary-bg, #edeef1);
+}
+
+/* States */
+.fl-tag--hover {
+  border-color: var(--color-border-input-selected, #262322);
+}
+
+.fl-tag--selected {
+  background: var(--color-tag-selected-bg, #262322);
+  color: var(--color-text-inverse, white);
+  border-color: var(--color-border-container-contrast, black);
+}
+
+.fl-tag--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Small size */
+.fl-tag--sm {
+  height: var(--size-tag-sm, 20px);
+  min-width: 20px;
+  font-size: var(--font-size-xs, 10px);
+}
+
+/* Text content (flex fill) */
+.fl-tag__label {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Trailing icon (close/remove) */
+.fl-tag__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.fl-tag__icon svg {
+  width: 10px;
+  height: 10px;
+}
+
+/* Chip (quantity badge inside tag) */
+.fl-tag__chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 14px;
+  height: 14px;
+  padding: 0 4px;
+  border-radius: 9999px;
+  background: var(--color-tag-chip-bg, #262322);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs, 10px);
+  font-weight: var(--font-weight-normal, 400);
+  line-height: 1.4;
+  color: var(--color-text-inverse, white);
+  flex-shrink: 0;
+}
+
+.fl-tag--secondary .fl-tag__chip {
+  background: var(--color-tag-chip-secondary-bg, #edeef1);
+  color: var(--color-tag-text, #262322);
+}
+
+.fl-tag--sm .fl-tag__chip {
+  min-width: 14px;
+  height: 14px;
+}
+
+/* Text-only variant (no gap for trailing icon) */
+.fl-tag--text-only {
+  gap: 0;
+}

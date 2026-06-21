@@ -1,60 +1,134 @@
 /* ─── Radio ─── */
 
+/* Radio button (the circle) */
 .fl-radio {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-3);
-  cursor: pointer;
-}
-
-.fl-radio__input {
-  appearance: none;
-  width: 18px;
-  height: 18px;
-  border: 2px solid var(--color-border-input);
-  border-radius: var(--radius-full);
-  background: transparent;
+  width: var(--size-radio, 16px);
+  height: var(--size-radio, 16px);
+  border-radius: 9999px;
+  border: 1.5px solid var(--color-radio-border, #40b8c5);
+  background: var(--color-radio-bg, #f7f8f8);
   cursor: pointer;
   position: relative;
   flex-shrink: 0;
-  transition: border-color var(--duration-normal) var(--ease-default);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.fl-radio__input:checked {
-  border-color: var(--color-primary);
+.fl-radio:hover {
+  border-color: var(--color-radio-border-hover, #6ac9ce);
 }
 
-.fl-radio__input:checked::after {
-  content: "";
-  position: absolute;
-  left: 3px;
-  top: 3px;
+.fl-radio--checked {
+  border-color: var(--color-radio-border-hover, #6ac9ce);
+}
+
+.fl-radio--focus {
+  border-width: 2px;
+  border-color: var(--color-radio-border, #40b8c5);
+}
+
+.fl-radio--disabled {
+  background: var(--color-input-disabled-bg, #edeef1);
+  border-color: var(--color-border-disabled, #d8dbdf);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Inner selection dot */
+.fl-radio__dot {
   width: 8px;
   height: 8px;
-  border-radius: var(--radius-full);
-  background: var(--color-primary);
+  border-radius: 9999px;
+  background: var(--color-radio-dot, #6ac9ce);
 }
 
-.fl-radio__input:hover:not(:disabled) {
-  border-color: var(--color-primary);
+.fl-radio--disabled .fl-radio__dot {
+  background: var(--color-radio-dot-disabled, #f7f8f8);
 }
 
-.fl-radio__input:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
+/* Radio with label */
+.fl-radio-label {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2, 8px);
 }
 
-.fl-radio__label {
-  font-size: var(--font-size-body);
-  color: var(--color-text-primary);
-  line-height: var(--line-height-body);
+.fl-radio-label--description {
+  align-items: flex-start;
 }
 
-.fl-radio__description {
-  font-size: var(--font-size-caption);
-  color: var(--color-text-muted);
-}
-
-.fl-radio--label-left {
+.fl-radio-label--left {
   flex-direction: row-reverse;
+}
+
+/* Radio container (vertical padding alignment for description variant) */
+.fl-radio-label__control {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Text block */
+.fl-radio-label__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-toggle-vertical, 8px);
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-family-primary);
+  line-height: 1.4;
+}
+
+/* Title row (label + sub-label) */
+.fl-radio-label__title {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.fl-radio-label__name {
+  font-size: var(--font-size-body, 14px);
+  font-weight: var(--font-weight-normal, 400);
+  color: var(--color-text-strong, #443f3f);
+}
+
+.fl-radio-label__sub {
+  font-size: var(--font-size-sm, 12px);
+  font-weight: var(--font-weight-normal, 400);
+  color: var(--color-text-placeholder, #4d4846);
+}
+
+/* Description text */
+.fl-radio-label__description {
+  font-size: var(--font-size-xs, 10px);
+  font-weight: var(--font-weight-normal, 400);
+  color: var(--color-text-caption, #4d4846);
+  line-height: 1.4;
+  width: 100%;
+}
+
+/* Radio Card (selection card) */
+.fl-radio-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
+  width: 404px;
+  border: 1px solid var(--color-border-weak, #c7c4c1);
+  border-radius: var(--radius-container, 8px);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.fl-radio-card:hover {
+  background: var(--color-card-hover-bg, #edeef1);
+  border-color: var(--color-border-normal, #585250);
+}
+
+.fl-radio-card--selected {
+  background: var(--color-card-selected-bg, #f7f8f8);
+  border-color: var(--color-border-strong, #262322);
 }
