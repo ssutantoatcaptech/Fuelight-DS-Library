@@ -1,41 +1,163 @@
 /* ─── Search ─── */
 
+/* Container */
 .fl-search {
-  position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  width: 364px;
 }
 
-.fl-search__icon {
-  position: absolute;
-  left: 12px;
-  width: 16px;
-  height: 16px;
-  color: var(--color-text-placeholder);
+.fl-search--with-button {
+  width: 484px;
+  gap: 8px;
+}
+
+/* Input field */
+.fl-search__input {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  height: 48px;
+  padding: 0 var(--spacing-input-horizontal-md, 16px);
+  gap: var(--spacing-input-between, 12px);
+  background: var(--color-input-bg, #f7f8f8);
+  border: 1px solid var(--color-border-input, #c7c4c1);
+  border-radius: var(--radius-input-md, 8px);
+}
+
+.fl-search__input--hover {
+  background: var(--color-input-hover-bg, #f7f8f8);
+  border-color: var(--color-border-input-hover, #262322);
+  border-width: 2px;
+  padding: 0 15px;
+}
+
+.fl-search__input--focus {
+  background: var(--color-input-focus-bg, #f7f8f8);
+  border-color: var(--color-border-input-selected, #262322);
+  border-width: 2px;
+  padding: 0 15px;
+}
+
+.fl-search__input--filled {
+  background: var(--color-input-filled-bg, #f7f8f8);
+  border: 1px solid var(--color-border-input, #c7c4c1);
+}
+
+.fl-search__input--disabled {
+  background: var(--color-input-disabled-bg, #edeef1);
+  border: 1px solid var(--color-border-disabled, #d8dbdf);
+  cursor: not-allowed;
   pointer-events: none;
 }
 
-.fl-search__input {
+/* Small size */
+.fl-search--sm .fl-search__input {
+  height: 36px;
+  border-radius: var(--radius-input-xs, 6px);
+}
+
+/* Leading search icon */
+.fl-search__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.fl-search__icon svg {
+  width: 19.5px;
+  height: 19.5px;
+}
+
+.fl-search--sm .fl-search__icon {
+  width: 20px;
+  height: 20px;
+}
+
+.fl-search--sm .fl-search__icon svg {
+  width: 16.5px;
+  height: 16.5px;
+}
+
+/* Value text */
+.fl-search__value {
+  flex: 1;
+  min-width: 0;
   font-family: var(--font-family-primary);
-  font-size: var(--font-size-caption);
-  color: var(--color-text-strong);
-  border: 1px solid var(--color-border-input);
-  border-radius: var(--radius-md);
-  background: #fbfcfd;
-  padding: 9px 11px 9px 36px;
-  width: 100%;
-  transition: border-color var(--duration-normal) var(--ease-default);
+  font-size: var(--font-size-body, 14px);
+  font-weight: var(--font-weight-normal, 400);
+  line-height: 1.6;
+  color: var(--color-text-strong, #443f3f);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.fl-search__input:hover {
-  border-color: var(--color-border-strong);
+.fl-search__input--disabled .fl-search__value {
+  color: var(--color-text-muted, #585250);
 }
 
-.fl-search__input:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 1px;
+.fl-search--sm .fl-search__value {
+  font-size: var(--font-size-sm, 12px);
 }
 
-.fl-search__input::placeholder {
-  color: var(--color-text-placeholder);
+/* Placeholder */
+.fl-search__value--placeholder {
+  color: var(--color-text-placeholder, #585250);
+}
+
+/* Action icon (clear/close) */
+.fl-search__action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.fl-search__action svg {
+  width: 19.5px;
+  height: 19.5px;
+}
+
+.fl-search--sm .fl-search__action {
+  width: 20px;
+  height: 20px;
+}
+
+.fl-search--sm .fl-search__action svg {
+  width: 16.5px;
+  height: 16.5px;
+}
+
+/* Search button (for "Search and button" variant) */
+.fl-search__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  min-width: 80px;
+  padding: 0 var(--spacing-button-horizontal, 12px);
+  background: var(--color-button-primary-bg, #40b8c5);
+  border: 0 solid var(--color-button-primary-border, #40b8c5);
+  border-radius: var(--radius-button-md, 8px);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-body, 14px);
+  font-weight: var(--font-weight-normal, 400);
+  line-height: 1;
+  color: var(--color-button-primary-text, #585250);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.fl-search__button--sm {
+  height: 36px;
+  border-radius: var(--radius-button-sm, 8px);
+  padding: 0 var(--spacing-button-horizontal-sm, 12px);
 }
