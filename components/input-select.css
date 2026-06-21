@@ -1,0 +1,182 @@
+/* ─── Input Select ─── */
+
+.fl-input-select {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-2, 8px);
+  width: 364px;
+}
+
+/* Label */
+.fl-input-select__label {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-body, 14px);
+  font-weight: var(--font-weight-normal, 400);
+  line-height: 1.4;
+  color: var(--color-text-strong, #443f3f);
+  width: 100%;
+}
+
+/* Input field container */
+.fl-input-select__field {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-input-between, 12px);
+  width: 100%;
+  height: 48px;
+  padding: 0 var(--spacing-input-horizontal, 12px);
+  background: var(--color-input-bg, #f7f8f8);
+  border: 1px solid var(--color-border-input, #c7c4c1);
+  border-radius: var(--radius-input, 8px);
+  cursor: pointer;
+}
+
+.fl-input-select__field--hover {
+  background: var(--color-input-hover-bg, #f7f8f8);
+  border-color: var(--color-border-input-hover, #262322);
+  border-width: 2px;
+  padding: 0 11px;
+}
+
+.fl-input-select__field--focus {
+  background: var(--color-input-focus-bg, #f7f8f8);
+  border-color: var(--color-border-input-selected, #262322);
+  border-width: 2px;
+  padding: 0 11px;
+}
+
+.fl-input-select__field--focus-alt {
+  background: var(--color-input-focus-alt-bg, #edeef1);
+  border-color: var(--color-border-input-selected, #262322);
+  border-width: 2px;
+  padding: 0 11px;
+}
+
+.fl-input-select__field--filled {
+  background: var(--color-input-filled-bg, #f7f8f8);
+  border: 1px solid var(--color-border-input, #c7c4c1);
+}
+
+.fl-input-select__field--disabled {
+  background: var(--color-input-disabled-bg, #edeef1);
+  border: 1px solid var(--color-border-disabled, #d8dbdf);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.fl-input-select__field--success {
+  background: var(--color-input-success-bg, #f7f8f8);
+  border: 1px solid var(--color-success, #19b07a);
+}
+
+.fl-input-select__field--error {
+  background: var(--color-input-error-bg, #f7f8f8);
+  border-color: var(--color-danger, #c10a00);
+  border-width: 2px;
+  padding: 0 11px;
+}
+
+/* Small size */
+.fl-input-select--sm .fl-input-select__field {
+  height: 36px;
+}
+
+/* Leading icon */
+.fl-input-select__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.fl-input-select__icon svg {
+  width: 19.5px;
+  height: 19.5px;
+}
+
+.fl-input-select--sm .fl-input-select__icon {
+  width: 15px;
+  height: 20px;
+}
+
+.fl-input-select--sm .fl-input-select__icon svg {
+  width: 16.5px;
+  height: 16.5px;
+}
+
+/* Value text */
+.fl-input-select__value {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-body, 14px);
+  font-weight: var(--font-weight-normal, 400);
+  line-height: 1.6;
+  color: var(--color-text-strong, #443f3f);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fl-input-select__field--disabled .fl-input-select__value {
+  color: var(--color-text-muted, #585250);
+}
+
+.fl-input-select__field--success .fl-input-select__value {
+  color: var(--color-text-success-value, #e2e1df);
+}
+
+.fl-input-select__field--error .fl-input-select__value {
+  color: var(--color-text-error-value, #e2e1df);
+}
+
+.fl-input-select--sm .fl-input-select__field--success .fl-input-select__value,
+.fl-input-select--sm .fl-input-select__field--error .fl-input-select__value {
+  font-size: var(--font-size-sm, 12px);
+}
+
+/* Trailing chevron */
+.fl-input-select__chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.fl-input-select__chevron svg {
+  width: 19.5px;
+  height: 19.5px;
+}
+
+.fl-input-select--sm .fl-input-select__chevron {
+  width: 8px;
+  height: 20px;
+}
+
+.fl-input-select--sm .fl-input-select__chevron svg {
+  width: 16.5px;
+  height: 16.5px;
+}
+
+/* Helper / caption text */
+.fl-input-select__helper {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm, 12px);
+  font-weight: var(--font-weight-normal, 400);
+  line-height: 1.6;
+  color: var(--color-text-caption, #4d4846);
+  width: 100%;
+}
+
+.fl-input-select__helper--success {
+  color: var(--color-success-text, #19b07a);
+}
+
+.fl-input-select__helper--error {
+  color: var(--color-danger-text, #f40000);
+}
